@@ -1,0 +1,595 @@
+
+html {
+	height: 100%;
+}
+ body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	overflow-x: hidden;
+	background-color: #fff;
+}
+
+header {
+	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	z-index: 8000;
+
+}
+
+nav {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	z-index: 8900;
+	width: 100%;
+	height: 51px;
+	padding-top: 4px;
+	background: #000;
+	
+	
+}
+
+@keyframes navAnimation {
+	0% {
+		position: fixed;
+		transform: translateY(-100%);
+
+	}
+
+	80% {
+		transform: translateY(20%);
+		position: fixed;
+		background-color: white;
+		
+	}
+
+	100% {
+		transform: translateY(0);
+		position: fixed;
+		opacity: 1;
+		background-color: white;
+		border-bottom: 3px solid #BA380D80;
+	
+	}
+}
+
+
+
+#order {
+	text-decoration: none;
+	color: #BA380D;
+}
+
+nav a {
+	text-decoration: none;
+	color: #afafafBF;
+}
+
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	list-style: none;
+	color: white;
+	
+}
+
+nav li {
+	margin-left: 12px;
+	margin-right: 12px
+}
+
+.video-wrapper {
+	position: relative;
+	width: 100%;
+
+
+
+	
+	
+}
+
+video {
+	width: 100% !important;
+	height: auto !important;
+	display: block;
+
+}
+
+.video-wrapper:before {
+  content: '';
+  position: absolute;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-top: 55px;
+}
+
+#logo {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	top: calc(50% - 100px);
+	left: calc(50% - 100px);
+	z-index: 1000;
+	text-align: center;
+	background: #BA380D80;
+	border-radius: 10%;
+}
+
+
+
+.container {
+	width: 95%;
+	padding: 2rem;
+	margin: 0 auto;
+}
+
+ h1 {
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2.2em;
+
+}
+
+h1:after {
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 1.2em auto; /* This will center the border. */
+    width: 32%; /* Change this to whatever width you want. */
+    padding-top: 20px; /* This creates some space between the element and the border. */
+    border-bottom: 2.5px solid #BA380D; /* This creates the border. Replace black with whatever color you want. */
+}
+
+.container p {
+	width: 65%;
+	display: block;
+	margin: 0 auto;
+
+	font-family: 'Open Sans', sans-serif;
+
+}
+
+.daily-table {
+	width: 100%;
+	display: flex;
+	flex-flow: wrap row;
+	justify-content: center;
+	align-items: flex-start;
+	margin-top: 90px;
+}
+
+.daily-table .daily-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	width: 20%;
+	
+}
+
+.daily-table .daily-item img {
+	width: 30px;
+	height: 30px;
+}
+
+.daily-table .daily-item h2 {
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
+
+}
+
+.daily-table .daily-item p {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.photo-section {
+	width: 100%;
+	margin-top: 7em;
+}
+
+.photo-section h1 {
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2.2em;
+
+}
+
+.gallery {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(3, 33.3%);
+	grid-template-rows: repeat(2, 50%);
+	grid-template-areas: 
+		"one two three"
+		"four five six";
+	
+
+	
+}
+
+.image-wrap {
+	position: relative;
+	
+	overflow: hidden;
+}
+
+
+
+
+
+.image-wrap img {
+	width: 100%;
+	height: 100%;
+	transition: all 0.2s;
+
+	
+
+}
+	
+.gallery .image-wrap::before {
+  content: '';
+  position: absolute;
+  background-color: #000000D9;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  
+}
+
+.gallery .image-wrap:hover::before {
+	background-color: #00000000;
+}
+
+.image-wrap:hover img {
+	transform: scale(1.2);
+}
+
+
+
+.app-grid {
+	width: 80%;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(2, 50%);
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-areas: 
+		"mockup steps"
+		"mockup steps"
+		"mockup badge"
+}
+
+ol {
+	grid-area: steps;
+	list-style: none;
+	counter-reset: my-counter;
+	text-align: left;
+	width: 100%;
+	margin: auto;
+	margin-left: 5px;
+
+}
+
+ol li {
+	position: relative;
+	counter-increment: my-counter;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 2.5em;
+	line-height: 1;
+}
+
+ol li::before {
+	
+	content: counter(my-counter);
+	color: #BA380D;
+	font-size: 1.9em;
+	font-weight: bold;
+	line-height: 1.5;
+	text-align: center;
+	font-family: 'Montserrat', sans-serif;
+}
+#mobile-app {
+	background-color: #F5F5F5;
+}
+
+.app-grid > img {
+	grid-area: mockup;
+	height: 700px;
+	margin: auto;
+	animation: slideUp 1.3s forwards ease-out;
+}
+
+@keyframes slideUp {
+	from {
+		opacity: 0;
+		transform: translateY(100%);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+}
+
+.app-grid a {
+	grid-area: badge;
+	margin: auto;
+	margin-left: 43px;
+	width: 50%;
+}
+
+.app-grid a img {
+	width: 100%;
+	
+
+}
+
+#cities {
+	position: relative;
+	z-index: 1000;
+	margin-top: 3em;
+	background-color: #fff;
+}
+
+.city-flex {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
+.city-data {
+	width: 100%;
+	display: flex;
+	flex-flow: row wrap;
+}
+.city-item {
+	width: 20%;
+	margin: 2.3em 1.6em;
+	animation: slideUp 1s forwards;
+}
+.city-item > img {
+	width: 100%;
+	height: 253px;
+}
+.city-item h2 {
+	font-family: 'Montserrat', sans-serif
+}
+
+.city-item p {
+	margin: 0.4em auto;
+	font-weight: bolder;
+	width: 90%;
+
+}
+.cities-icon {
+	margin: 0.4em auto;
+	width: 30px;
+	height: 30px
+	
+	
+}
+
+#experiences {
+	position: relative;
+	width: 100%;
+	height: 70vh;
+	background-image: url('pastabg.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom ;
+	background-attachment: fixed;
+	color: #fff;
+}
+
+#experiences:before {
+  content: '';
+  position: absolute;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 5px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+#experiences h1 {
+	position: relative;
+	width: 80%;
+	margin: auto;
+	padding: 2em;
+	z-index: 1000;
+	color: #fff;
+}
+
+.experience-flex {
+	width: 80%;
+	
+	margin: 2em auto 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	
+	color: #fff;
+}
+
+.experience-card {
+	position: relative;
+	width: 25%;
+	z-index: 1000;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 1.3em;
+	margin: 2em 1.2em;
+	padding: 1em;
+
+}
+
+i {
+	position: relative;
+	margin-bottom: 2em;
+	width: 30px;
+	height: 30px;
+}
+
+.experience-card img {
+	display: inline;
+	vertical-align: sub;
+}
+
+.experience-card h3 {
+	display: inline;
+	font-family: 'Montserrat', serif;
+}
+
+#subscribe {
+	background-color: #F5F5F5;
+}
+
+.subscribe-flex {
+	width: 80%;
+	margin: auto;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
+.subscribe-card {
+	width: 25%;
+	max-width: 290px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	margin: 0 2em;
+	padding-bottom: 1.2em;
+	text-align: left;
+	font-family: 'Open Sans', serif;
+}
+
+.subscribe-card h2 {
+	font-family: 'Montserrat', sans-serif;
+	background-color: #000000B3;
+	color: #fff;
+	margin: 0;
+	padding: 0.2em;
+	mix-blend-mode: multiply;
+	
+}
+
+h4 {
+	margin: 0;
+	padding-left: 0.2em;
+	font-size: 1.2em;
+}
+
+span {
+	color: #BA380D;
+	font-size: 2.4em;
+}
+
+.subscribe-card ul {
+	list-style: none;
+	padding-top: 2em;
+	padding-left: 0.2em;
+
+}
+
+
+.subscribe-card i {
+	margin: 0;
+}
+
+button {
+	font-family: 'Montserrat', serif;
+	color: #fff;
+	background-color: #BA380D;
+	outline: none;
+	border-radius: 30%;
+	width: 120px;
+	margin: auto;
+	padding: 1em;
+    cursor:pointer;
+}
+
+#contact {
+	padding-bottom: 6em;
+}
+
+.form-div {
+	position: relative;
+	width: 500px;
+	margin: auto;
+	padding-top: 3em;
+}
+
+form {
+	font-family: 'Montserrat', sans-serif;
+	
+	text-align: right;
+}
+
+input, select, textarea {
+	
+	width: 300px;
+	display: inline-block;
+	margin: 0 1.2em 1.2em;
+}
+
+input[type=checkbox] {
+	text-align: left;
+}
+
+input[type=submit] {
+	width: 150px;
+    padding:5px 15px; 
+    color: white;
+    background:#BA380D; 
+    border:0 none;
+    cursor:pointer;
+    border-radius: 5px; 
+}
+
+footer {
+	bottom: 0;
+	height: 170px;
+	border-top-left-radius: 6%;
+	border-top-right-radius: 6%;
+	background-color: #151515;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	font-family: 'Open Sans', sans-serif;
+}
+
+footer ul {
+		text-align: center;
+		width: 30%;
+		list-style: none;
+		font-size: 1.1em;
+		color: #AfAfAf;
+	
+}
+h6 {
+	color: #8f8f8f80;
+}
+footer ul li {
+	display: inline;
+	text-align: center;
+	margin-right: 10px;
+
+}
+
+footer ul li i {
+	margin-bottom: 0;
+
+}
